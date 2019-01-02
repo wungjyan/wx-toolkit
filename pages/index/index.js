@@ -4,51 +4,51 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    year:'',
+    days:'',
+    percent:''
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+
+  onLoad: function() {
+    this.getPercent()
+  },
+
+  // 计算时间比
+  getPercent() {
+    let year = new Date().getFullYear()
+    let leap;
+    // 闰年或平年
+    if (year % 400 === 0) {
+      leap = true
+    } else if (year % 4 === 0 && year % 100 !== 0) {
+      leap = true
+    } else {
+      leap = false
+    }
+    // 当年总天数
+    let count = leap ? 366 : 365
+
+    // 已过去多少天
+    let start = new Date()
+    start.setMonth(0)
+    start.setDate(1)
+    let days = (new Date().getTime() - start.getTime()) / 1000 / 60 / 60 / 24 + 1
+    console.log(days)
+
+    // 百分比
+    let percent = (days * 100 / count).toFixed(1)
+
+    this.setData({
+      year,
+      days,
+      percent
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+
+  // 点击按钮
+  gotoFunc(){
+    wx.redirectTo({
+      url: '../func/index'
     })
   }
 })

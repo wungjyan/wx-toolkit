@@ -1,0 +1,5 @@
+<view class="func">
+  <view class='line' bindtap='chooseFunc'>
+    <view data-key="qr">二维码生成器</view>
+  </view>
+</view>
