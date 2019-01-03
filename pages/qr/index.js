@@ -46,18 +46,42 @@ Page({
     })
   },
 
-  previewImg: function (e) {
-    let img = this.param.imagePath
-    if(!img){
-      wx.showToast({
-        title: '操作太快，重试',
-        icon:'none'
-      })
-      return;
-    }
-    wx.previewImage({
-      current: img, // 当前显示图片的http链接
-      urls: [img] // 需要预览的图片http链接列表
+  // 点击保存
+  saveImg(){
+    wx.showLoading({
+      title: '图片保存中',
+    })
+    let ctx = wx.createCanvasContext('canvas2', this)
+    // 在canvas绘制前填充白色背景
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, 200, 200);
+    ctx.drawImage(this.param.imagePath,10,10,180,180)
+    ctx.draw(true, () => {
+      wx.canvasToTempFilePath({
+        canvasId: 'canvas2',
+        fileType: 'jpg',
+        success: (res) => {
+          console.log(res)
+          if (res.tempFilePath) {
+            wx.hideLoading()
+            wx.saveImageToPhotosAlbum({
+              filePath: res.tempFilePath,
+              success: function () {
+                wx.showToast({
+                  title: '保存成功'
+                })
+              },
+              fail: function () {
+                wx.showToast({
+                  title: '保存失败',
+                  icon: 'none'
+                })
+              }
+            })
+          }
+
+        }
+      }, this)
     })
   },
 
