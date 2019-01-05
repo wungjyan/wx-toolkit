@@ -1,1 +1,9 @@
-/* pages/fun/index.wxss */
+.func .line{
+  display: flex;
+}
+
+.func .line > view{
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+}
