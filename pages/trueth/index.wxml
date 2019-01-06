@@ -1,0 +1,29 @@
+<view class="trueth">
+  <view class='header'>
+    <text>经鉴定，您的设备为</text>
+    <text>{{model}}</text>
+  </view>
+  <button class='share-btn' type='primary' open-type="share">分享给朋友</button>
+  <view class='footer'>
+    <view class='line'>
+      <text>手机型号</text>
+      <text class='desc'>{{model}}</text>
+    </view>
+    <view class='line'>
+      <text>手机品牌</text>
+      <text class='desc'>{{brand}}</text>
+    </view>
+    <view class='line'>
+      <text>系统版本</text>
+      <text class='desc'>{{system}}</text>
+    </view>
+    <view class='line'>
+      <text>屏幕像素</text>
+      <text class='desc'>{{screenWidth*pixelRatio}}x{{screenHeight*pixelRatio}}</text>
+    </view>
+    <view class='line'>
+      <text>微信版本</text>
+      <text class='desc'>{{version}}</text>
+    </view>
+  </view>
+</view>

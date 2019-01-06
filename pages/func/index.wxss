@@ -1,5 +1,6 @@
 .func .line{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .func .line > view{

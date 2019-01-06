@@ -1,6 +1,6 @@
 <view class="qr">
   <view class='qr-box'>
-    <canvas bindtap="saveImg" hidden='{{hideCanvas}}' canvas-id='mycanvas' style='width: 400rpx;height: 400rpx;background:red;margin:100rpx auto;'></canvas>
+    <canvas bindtap="saveImg" hidden='{{hideCanvas}}' canvas-id='mycanvas' style='width: 400rpx;height: 400rpx;background:#fff;margin:100rpx auto;'></canvas>
     <view class="warning" hidden='{{!hideCanvas}}'>二维码生成区</view>
   </view>
   <view class='tip' hidden='{{hideCanvas}}'>点击二维码，保存</view>

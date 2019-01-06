@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/func/index",
-    "pages/qr/index"
+    "pages/qr/index",
+    "pages/trueth/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

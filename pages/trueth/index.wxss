@@ -1,0 +1,29 @@
+
+.trueth .header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 360rpx;
+  background: #1aad19;
+  color: white;
+  font-size: 18px;
+}
+.trueth .share-btn{
+  margin: 50rpx 30rpx;
+}
+.trueth .footer{
+  width: 100%;
+  background: white;
+}
+.trueth .footer .line{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20rpx;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+.trueth .footer .line .desc{
+  color: #ababab;
+}
