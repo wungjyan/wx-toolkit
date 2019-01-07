@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/func/index",
     "pages/qr/index",
-    "pages/trueth/index"
+    "pages/trueth/index",
+    "pages/graffiti/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

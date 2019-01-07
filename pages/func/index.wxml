@@ -3,5 +3,6 @@
     <view data-key="qr">二维码生成器</view>
     <view>简单点天气</view>
     <view data-key="trueth">手机真伪</view>
+    <view data-key="graffiti">涂鸦生成图片</view>
   </view>
 </view>

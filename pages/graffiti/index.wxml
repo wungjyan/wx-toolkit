@@ -1,0 +1,32 @@
+<view class="graffiti">
+  <view class="container">
+    <!--画布区域-->
+    <view class="canvas_area">
+        <canvas canvas-id="myCanvas" class="myCanvas"
+            disable-scroll="false"
+            bindtouchstart="touchStart"
+            bindtouchmove="touchMove"
+            bindtouchend="touchEnd">
+        </canvas>
+    </view>
+    <canvas canvas-id='picCanvas' hidden="{{hideCanvas}}" style='position:fixed;top:0;bottom:0;width:300px;height:300px;z-index:-99;background:red;'></canvas>
+    <view class='save_btn'>
+     <button type='primary' bindtap='saveImg'>保存到相册</button>
+    </view>
+   
+    <!--画布工具区域-->
+    <view class="canvas_tools">
+        <view class="box box1" bindtap="penSelect" data-param="5">
+          <text class='small block'></text>
+        </view>
+        <view class="box box2" bindtap="penSelect" data-param="15">
+          <text class='big block'></text>
+        </view>
+        <view class="box box3" bindtap="colorSelect" data-param="red"></view>
+        <view class="box box4" bindtap="colorSelect" data-param="blue"></view>
+        <view class="box box5" bindtap="clearCanvas">
+          <text class='iconfont icon-eraser'></text>
+        </view>
+    </view>
+</view>
+</view>

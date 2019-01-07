@@ -32,7 +32,7 @@ Page({
     let start = new Date()
     start.setMonth(0)
     start.setDate(1)
-    let days = (new Date().getTime() - start.getTime()) / 1000 / 60 / 60 / 24 + 1
+    let days = parseInt((new Date().getTime() - start.getTime()) / 1000 / 60 / 60 / 24 + 1)
     console.log(days)
 
     // 百分比
